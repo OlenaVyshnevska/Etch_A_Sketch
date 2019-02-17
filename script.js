@@ -7,7 +7,17 @@ for(i = 0; i < 16; i++){
         cells.classList.add('cells');
         rows.appendChild(cells);
         cells.addEventListener("mouseover", () => {
-            cells.style.background = "black"
+            cells.style.background = createColor();
         })
     }
-}    
+} 
+
+
+function createColor() {
+    var letterCodes = '0123456789ABCDEF';
+    var colorTag = '#';
+    for (var i = 0; i < 6; i++) {
+      colorTag += letterCodes[Math.floor(Math.random() * 16)];
+    }
+    return colorTag;
+  }
